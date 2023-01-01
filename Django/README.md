@@ -26,4 +26,22 @@ This will deactivate the virtual environment, and you will be back to the global
 
 ## PROJECTS
 
-1. [the authentication system](./LoginSystem/)
+## SETTING UP A DJANGO PROJECT
+
+The prerequisites of using this commands is that you have already setup your environment and you can activate it and deactivate it at this particular point in time.
+
+## django-admin startproject
+
+so the first step in a django application is to always setup a blueprint/framework of your django, that' the entry point of your system, and this done using this command `django-admin startproject NameOfYourProject .`
+
+that last dot there is paramount so as to avoid creation of a lot of unnecessary sub-folders.
+
+this command will always create one folder with about 5 python files:
+
+1. [__init__.py](./LoginSystem/AuthLoginSystem/__init__.py)
+2. [asgi.py](./LoginSystem/AuthLogin/../AuthLoginSystem/asgi.py)
+3. [settings.py] (./LoginSystem/AuthLogin/../LoginSystem/settings.py)
+4. [urls.py](LoginSystem/AuthLoginSystem/urls.py)
+5. [wsgi.py](LoginSystem/AuthLoginSystem/wsgi.py)
+
+6. [the authentication system](./LoginSystem/)
