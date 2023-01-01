@@ -40,8 +40,30 @@ this command will always create one folder with about 5 python files:
 
 1. [__init__.py](./LoginSystem/AuthLoginSystem/__init__.py)
 2. [asgi.py](./LoginSystem/AuthLogin/../AuthLoginSystem/asgi.py)
-3. [settings.py] (./LoginSystem/AuthLogin/../LoginSystem/settings.py)
+3. [settings.py](./LoginSystem/settings.py)
 4. [urls.py](LoginSystem/AuthLoginSystem/urls.py)
 5. [wsgi.py](LoginSystem/AuthLoginSystem/wsgi.py)
 
-6. [the authentication system](./LoginSystem/)
+### __init__.py
+
+this is an empty file. it tells python that this directory should be treated has a python package.
+
+## asgi.py
+
+asynchronous server gateway interface - it defines how web applications are going to communicate with web servers.
+
+it is similar to wsgi(web server gateway interface) which also fuctions the same. it is only compatible with async-only web based servers.
+
+## settings.py
+
+this contains settings for your django project. i.e database configuration, installed apps ...
+
+## urls.py
+
+url declarations for your django project, it's where the routing happens.
+
+## wsgi.py
+
+this is an entry point for wsgi-compatible web servers to serve your django project.
+
+1. [the authentication system](./LoginSystem/)
