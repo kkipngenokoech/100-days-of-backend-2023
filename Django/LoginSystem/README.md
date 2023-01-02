@@ -52,3 +52,6 @@ every webpage must have its own unique URL so that our application will know wha
 in our [urls.py](AuthLoginSystem/urls.py), we have defined a path `path("login/",auth_views.LoginView.as_view(),name='login')`
 
 LoginView will attempt to render registration/login.html  that means you have to create a templates directory and registration sub-folder.
+
+we need to tell our system how to locate our templates since we have added a folder for it.
+
