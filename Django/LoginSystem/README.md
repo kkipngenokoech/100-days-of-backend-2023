@@ -42,3 +42,13 @@ we also need AuthenticationMiddleware to associate users with requests using ses
 when you have checked if all this modules are found in the [settings.py](AuthLoginSystem/settings.py) of our project, then we can do a migration.
 
 `python manage.py migrate`
+
+## URLS
+
+the next step is to route your backend, that is defining your urls. url is what you normally see in your browser.
+
+every webpage must have its own unique URL so that our application will know what to share with our users when they visit a url.
+
+in our [urls.py](AuthLoginSystem/urls.py), we have defined a path `path("login/",auth_views.LoginView.as_view(),name='login')`
+
+LoginView will attempt to render registration/login.html  that means you have to create a templates directory and registration sub-folder.
