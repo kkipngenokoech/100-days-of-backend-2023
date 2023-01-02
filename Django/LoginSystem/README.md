@@ -62,3 +62,11 @@ when a url is requested from the browser, it goes to the project-level url and s
 ## python manage.py startapp home
 
 we want when a user successfully logs in, he gets redirected to the home page and so we are going to create an application for that.
+
+`python3 manage.py startapp home`
+
+then from there you add this app into the list of INSTALLED_APPS in your project-level url.
+
+## login_redirect_url
+
+for one to redirect after a successful login you use the `LOGIN_REDIRECT_URL = "home/" in your project-level settings.py
