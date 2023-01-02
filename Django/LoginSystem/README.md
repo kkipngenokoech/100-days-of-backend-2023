@@ -55,3 +55,10 @@ LoginView will attempt to render registration/login.html  that means you have to
 
 we need to tell our system how to locate our templates since we have added a folder for it.
 
+## from the browser to the views for a login page
+
+when a url is requested from the browser, it goes to the project-level url and search for the same url.
+
+## python manage.py startapp home
+
+we want when a user successfully logs in, he gets redirected to the home page and so we are going to create an application for that.
