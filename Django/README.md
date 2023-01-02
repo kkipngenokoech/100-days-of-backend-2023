@@ -38,6 +38,12 @@ that last dot there is paramount so as to avoid creation of a lot of unnecessary
 
 this command will always create one folder with about 5 python files:
 
+[manage.py](./LoginSystem/manage.py)
+
+## manage.py
+
+this is a command-line utility that will allow us to interact with our django application/project.
+
 1. [__init__.py](./LoginSystem/AuthLoginSystem/__init__.py)
 2. [asgi.py](./LoginSystem/AuthLogin/../AuthLoginSystem/asgi.py)
 3. [settings.py](./LoginSystem/settings.py)
