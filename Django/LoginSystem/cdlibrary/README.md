@@ -43,3 +43,24 @@ python3 manage.py makemigrations
 #apply the migrations
 python3 manage.py migrate
 ```
+
+## making our app recognizable from the admin side
+
+we need a way in which we can manage our application from the admin panel
+and for us to do that we are going to tweak our [admin.py](admin.py)
+
+### [Admin.py](admin.py)
+
+when you first open your [admin.py](admin.py), you will find this line in the very first line:
+
+`from django.contrib import admin`
+
+admin interface in itself is a django app
+
+it is a contrib app, this means it is a community contributed app
+
+it is flexible enough to accommodate other app's models and have admin actions in them
+
+in there we are going to import our model: `from .models import CD`, then you register your site - `admin.site.register(CD` such that when you navigate to Admin/ you will see your model there where you can:
+
+1. add, delete and edit your cd's
