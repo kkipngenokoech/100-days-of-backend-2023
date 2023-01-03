@@ -33,3 +33,13 @@ path("cdlibrary/",include("cdlibrary,urls"))
 likewise, this tells our website request that if you want something to do with cdlibrary we are going to redirect you to cdlibrary.urls for further instructions.
 
 this means /cdlibrary/ will bring you to the cdlibrary.urls
+
+the purpose why we are giving names to our urls is so that it makes it easy for us to route into it in our templates incase we want to add links to this routes.
+
+i.e in our templates:
+
+```html
+<p><a href = "{% url 'login' %}">login</a></p>
+```
+
+that is how we are going to route to the login page, since in our project level url there's a url we have added the name "login"
