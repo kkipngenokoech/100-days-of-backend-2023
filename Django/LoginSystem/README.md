@@ -70,3 +70,13 @@ then from there you add this app into the list of INSTALLED_APPS in your project
 ## login_redirect_url
 
 for one to redirect after a successful login you use the `LOGIN_REDIRECT_URL = "home/" in your project-level settings.py
+
+## CREATING A SUPERUSER
+
+to create an admin superuser you use `python3 manage.py createsuperuser`
+
+this superuser has all permissions
+
+## MVC/MVT FRAMEWORK
+
+model-view-template
