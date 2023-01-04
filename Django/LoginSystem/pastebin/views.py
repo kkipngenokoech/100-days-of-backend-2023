@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from .models import Paste
 
 # Create your views here.
@@ -14,3 +14,9 @@ class PasteDetailView(DetailView):
 class PasteListView(ListView):
     model = Paste
     context_object_name = 'pastes'
+
+class PasteUpdateView(UpdateView):
+    model = Paste
+
+class PasteDeleteView(DeleteView):
+    model = Paste
