@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'pastebin',
     'cdlibrary',
     'home',
     'django.contrib.admin',
