@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("login/", auth_views.LoginView.as_view(),name = "login"),
     path("login/",include('home.urls')),
-    path("cdlibrary/", include('cdlibrary.urls'), name="cdlibrary")
+    path("cdlibrary/", include('cdlibrary.urls'), name="cdlibrary"),
+    path("pastebin/", include('pastebin.urls'))
 ]
