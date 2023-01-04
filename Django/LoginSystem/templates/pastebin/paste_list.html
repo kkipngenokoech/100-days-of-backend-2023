@@ -7,28 +7,33 @@
     <title>Pastes</title>
 </head>
 <body>
-    {% for paste in pastes %}
-    <p>
-        <div>
-            <label>Name:</label>
-            <span>{{ paste.name }}</span>
-        </div>
-        <br>
-        <div>
-            <label>paste:</label>
-            <span>{{ paste.text }}</span>
-        </div>
-        <br>
-        <div>
-            <label>created:</label>
-            <span>{{ paste.created_at }}</span>
-        </div>
-        <br>
-        <div>
-            <label>modified:</label>
-            <span>{{ paste.updated_at }}</span>
-        </div>
-    </p>
-    {% endfor %}
+    {% if pastes %}
+        <h1>Recent pastes:</h1>
+        {% for paste in pastes %}
+            <p>
+                <div>
+                    <label>Name:</label>
+                    <span>{{ paste.name }}</span>
+                </div>
+                <br>
+                <div>
+                    <label>paste:</label>
+                    <span>{{ paste.text }}</span>
+                </div>
+                <br>
+                <div>
+                    <label>created:</label>
+                    <span>{{ paste.created_at }}</span>
+                </div>
+                <br>
+                <div>
+                    <label>modified:</label>
+                    <span>{{ paste.updated_at }}</span>
+                </div>
+            </p>
+        {% endfor %}
+    {% else %}
+        <h1>No recent pastes</h1>
+    {% endif %}
 </body>
 </html>
