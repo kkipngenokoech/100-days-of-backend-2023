@@ -1,6 +1,10 @@
 <label for="">Paste details:</label>
 <p>  
     <div>
+        <label for="id">Id:</label>
+        <span> {{ object.id }}</span>
+    </div>
+    <div>
         <label for="name">Name:</label>
         <span> {{ object.name }}</span>
     </div>
@@ -18,4 +22,13 @@
         <label for="updated_at">modified:</label>
         <span>{{ object.updated_at }}</span>
     </div>
+</p>
+<p>
+    <a href="{% url 'pastebin_paste_delete' object.id %}">delete</a>
+    |
+    <a href="{% url 'pastebin_paste_edit' object.id %}">edit</a>
+</p>
+
+<p>
+    <a href="{% url 'pastebin_paste_list' %}">View All</a>
 </p>

@@ -12,6 +12,10 @@
         {% for paste in pastes %}
             <p>
                 <div>
+                    <label for="id">Id:</label>
+                    <span>{{ paste.id }}</span>
+                </div>
+                <div>
                     <label>Name:</label>
                     <span>{{ paste.name }}</span>
                 </div>
@@ -29,6 +33,10 @@
                 <div>
                     <label>modified:</label>
                     <span>{{ paste.updated_at }}</span>
+                </div>
+                <br>
+                <div>
+                    <a href="{% url 'pastebin_paste_detail' paste.id %}">View Paste</a>
                 </div>
             </p>
         {% endfor %}
