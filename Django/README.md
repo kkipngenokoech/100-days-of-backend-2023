@@ -72,4 +72,6 @@ url declarations for your django project, it's where the routing happens.
 
 this is an entry point for wsgi-compatible web servers to serve your django project.
 
+when you want to redirect to another url after a successful save in django, let's say you are creating a new object, you go to where you have defined your views, to the view we are redirecting from and then you add the line `success_url = reverse_lazy("the url").
+
 1. [the authentication system](./LoginSystem/)
