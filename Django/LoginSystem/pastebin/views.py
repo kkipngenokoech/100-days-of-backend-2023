@@ -20,6 +20,7 @@ class PasteListView(ListView):
 class PasteUpdateView(UpdateView):
     model = Paste
     fields = ['text', 'name']
+    success_url = reverse_lazy("pastebin_paste_list")
 
 class PasteDeleteView(DeleteView):
     model = Paste
