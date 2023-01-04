@@ -10,4 +10,6 @@ class Paste(models.Model):
     def __unicode__(self):
         return self.name or str(self.id)
         # since our field name is optional(null=True), we need a fallback in the id if name is not found
-        
+   
+    def get_absolute_url(self):
+        return ("pastebin_paste_detail", [self.id])

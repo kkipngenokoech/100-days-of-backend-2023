@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastes</title>
+</head>
+<body>
+    {% for paste in pastes %}
+    <p>
+        <div>
+            <label>Name:</label>
+            <span>{{ paste.name }}</span>
+        </div>
+        <br>
+        <div>
+            <label>paste:</label>
+            <span>{{ paste.text }}</span>
+        </div>
+        <br>
+        <div>
+            <label>created:</label>
+            <span>{{ paste.created_at }}</span>
+        </div>
+        <br>
+        <div>
+            <label>modified:</label>
+            <span>{{ paste.updated_at }}</span>
+        </div>
+    </p>
+    {% endfor %}
+</body>
+</html>
