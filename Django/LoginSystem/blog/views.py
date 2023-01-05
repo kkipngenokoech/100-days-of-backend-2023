@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import user_passes_test
 from .models import Post
 from .forms import PostForm, CommentForm
 from django.views.generic import ListView
+from django.views.generic.dates import MonthArchiveView, WeekArchiveView
 
 # Create your views here.
 class PostListView(ListView):
@@ -34,3 +35,14 @@ def view_post(request, slug):
     # form.initial['email'] = request.session.get('email')
     # form.initial['website'] = request.session.get('website')
     return render(request, 'blog/blog_post.html',{'post':post,'form': form})
+
+class PostMonthArchiveView(MonthArchiveView):
+    queryset = Post.objects.all()
+    date_field = "created_on"
+    allow_future = True
+
+class PostWeekArchiveView(WeekArchiveView):
+    queryset = Post.objects.all()
+    date_field = "created_on"
+    week_format = "%W"
+    allow_future = True

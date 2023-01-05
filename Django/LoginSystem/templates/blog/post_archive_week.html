@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Archives</title>
+</head>
+<body>
+    <h2>Posts from {{ week|date:"F" }} {{ week|date:"w" }}, {{ week|date:"Y" }}</h2>
+
+    <div>
+        {% for post in object_list %}
+            <ul>
+                <li>
+                    <a href="{ url 'post_blog_detail' post.slug }">{{ post.title }}</a>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
+</body>
+</html>
