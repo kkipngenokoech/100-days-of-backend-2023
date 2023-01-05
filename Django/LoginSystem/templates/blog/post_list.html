@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <p>Hi there {{ user.username }}</p>
+    {% if posts %}
+        {% for post in posts %}
+            <p>
+                <div>
+                    <label for="title">Title:</label>
+                    {{ post.title }}
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    {{ post.author }}
+                </div>
+                <div>
+                    <label for="slug">Slug:</label>
+                    {{ post.slug }}
+                </div>
+                <div>
+                    <label for="textContent">Text content:</label>
+                    {{ post.textContent }}
+                </div>
+                <div>
+                    <label for="created_on">Published:</label>
+                    {{ post.created_on }}
+                </div>
+            </p>
+        {% endfor %}
+    {% else %}
+        <p>
+            No posts yet
+        </p>
+    {% endif %}
+</body>
+</html>

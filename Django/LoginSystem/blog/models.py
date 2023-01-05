@@ -16,12 +16,12 @@ class Post(models.Model):
     def get_absolute_url(self):
         return ('blog_post_detail', (),
         {
-            'slug' :self.Slug
+            'slug' :self.slug
         })
 
     def save(self, *args, **kwargs):
-        if not self.Slug:
-            self.Slug = slugify(self.Title)
+        if not self.slug:
+            self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
 
 class Comment(models.Model):
