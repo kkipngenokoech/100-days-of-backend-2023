@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post</title>
+    <title>{{ post.slug }}</title>
 </head>
 <body>
-    <h2>{{ post.title }}</h2>
+    <p>
+        <div>
+            <p>{{ post.title }}</p>
+        </div>
+        <div>
+            <span>
+                written by {{ post.author }} on {{ post.created_on }}
+            </span>
+        </div>
+    </p>
+    {% if post.comment_set.all %}
+    <div>
+        {% for comment in post.comment_set.all %}
+        <span>
+            <a href = "{{ comment.website }}">{{ comment.name }}</a> said on {{ comment.created_on }}
+        </span>
+        <p>
+            {{ comment.text }}
+        </p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div>
+        <h2>Add comments</h2>
+        <form action = "" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type = "submit" name = "submit", value = "submit">
+        </form>
+    </div>
 </body>
 </html>
