@@ -21,7 +21,7 @@ def add_post(request):
 
 def view_post(request, slug):
     post = get_object_or_404(Post, slug = slug)
-    form = CommentForm(request.GET or None)
+    form = CommentForm(request.POST or None)
     if form.is_valid():
         comment = form.save(commit = False)
         comment.post = post
