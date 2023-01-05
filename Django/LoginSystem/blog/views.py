@@ -16,5 +16,9 @@ def add_post(request):
         post = form.save(commit=False)
         post.author = request.user
         post.save()
-        return redirect(post)
+        return redirect("blog_post_detail",slug = post.slug)
     return render(request, 'blog/add_post.html', {'form': form})
+
+def view_post(request, slug):
+    post = get_object_or_404(Post, slug = slug)
+    return render(request, 'blog/blog_post.html',{'post':post})
