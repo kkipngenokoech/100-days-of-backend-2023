@@ -8,7 +8,7 @@
 </head>
 <body>
     Hi and welcome to the list of displays we have
-    <a href="{% url 'new_cd' %}">create new CD?</a>
+    <a href="{% url 'new_cd' %}">create new CD?</a> | <a href="{% url 'logout' %}">logout</a>
     {% for cd in cds %}
     <ul>
         <li>cd name: {{ cd.title }}</li>

@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth import logout
 from .models import Post
 from .forms import PostForm, CommentForm
 from django.views.generic import ListView
@@ -46,3 +47,7 @@ class PostWeekArchiveView(WeekArchiveView):
     date_field = "created_on"
     week_format = "%W"
     allow_future = True
+
+def LogoutView(request):
+    logout(request)
+    return redirect('index')
