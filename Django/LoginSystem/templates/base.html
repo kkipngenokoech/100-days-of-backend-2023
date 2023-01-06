@@ -9,32 +9,31 @@
     <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
 </head>
 <body>
-    <header>
-        <h1>My Site</h1>
-        {% if user.is_authenticated %}
-            Welcome, {{ user.username }}!
-        {% endif %}
-    </header>
-    <nav>
-      <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-      <div>
-        {% if user.is_authenticated %}
+    <div class="container">
+        <div>
+            <a href="{% url 'home' %}">kip</a>
+        </div>
+        <div class="pages">
             <ul>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-                <li><a href="{% url 'change_password' pk=request.user.pk %}">change password</a></li>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="">Contact</a></li>
             </ul>
-        {% else %}
-            <ul>
-                <li><a href="{% url 'login' %}">login</a></li>
-                <li><a href="{% url 'signup' %}">about</a></li>
-            </ul>
-        {% endif %}
-      </div>
-    </nav>
+        </div>
+        <div class="authentication">
+            {% if user.is_authenticated %}
+                <ul>
+                    <li><a href="{% url 'change_password' pk=request.user.pk %}">Hi, {{ user.username }}</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            {% else %}
+                <ul>
+                    <li><a href="{% url 'login' %}">login</a></li>
+                    <li><a href="{% url 'signup' %}">about</a></li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
     <main>
       {% block content %}{% endblock %}
     </main>

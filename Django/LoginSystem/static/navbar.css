@@ -1,4 +1,35 @@
 * {
     color: antiquewhite;
-    background-color: aqua;
+    background-color: rgb(85, 83, 83);
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+}
+
+.container > div {
+    margin: 20px;
+    flex-grow: 3;
+    /* padding: 2px; */
+}
+
+.authentication {
+    text-align: end;
+}
+
+.pages {
+    text-align: center;
 }
