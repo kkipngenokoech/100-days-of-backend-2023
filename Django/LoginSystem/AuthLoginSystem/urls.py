@@ -19,7 +19,7 @@ from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",LoginView.as_view(),name= "Login"),
+    path("",LoginView.as_view(),name= "login"),
     path("",include('home.urls')),
     path("cdlibrary/", include('cdlibrary.urls'), name="cdlibrary"),
     path("pastebin/", include('pastebin.urls')),
