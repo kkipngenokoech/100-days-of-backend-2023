@@ -5,7 +5,6 @@ from .models import CD
 # Create your views here.
 class CdListView(ListView):
     model = CD
-    template_name = "cds.html"
     context_object_name = "cds"
 
 class CdCreateView(CreateView):
