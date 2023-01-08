@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-
-{% block content %}
 {% block title %}{{ post.title }} {% endblock %}
+{% block content %}
         <div>
+            <h2>{{ post.title }} </h2>
             <span>
                 written by {{ post.author }} on {{ post.created_on }}
             </span>

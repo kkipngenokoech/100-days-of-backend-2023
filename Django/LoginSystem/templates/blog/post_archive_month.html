@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Archives</title>
-</head>
-<body>
-    <h2>Post Archives for {{ month|date:"F" }}, {{ month|date:'Y' }}</h2>
+{% extends 'base.html' %}
 
+
+{% block title %}Post Archives for {{ month|date:"F" }}, {{ month|date:'Y' }}{% endblock %}
+{% block content %}
+    <h2>Post Archives for {{ month|date:"F" }}, {{ month|date:'Y' }}</h2>
     {% if object_list.all %}
         {% for post in object_list %}        
             <ul>
@@ -20,5 +15,4 @@
     {% else %}
         <span>No posts in the specified dates</span>
     {% endif %}
-</body>
-</html>
+{% endblock %}
