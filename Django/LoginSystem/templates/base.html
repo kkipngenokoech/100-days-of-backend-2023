@@ -16,8 +16,9 @@
         <div class="pages">
             <ul>
               <li><a href="{% url 'home' %}">Home</a></li>
-              <li><a href="{% url 'about' %}">About</a></li>
-              <li><a href="">Contact</a></li>
+              <li><a href="{% url 'index' %}">blogs</a></li>
+              <li><a href = "{% url 'cds' %}">cd library</a></li>
+              <li><a href="{% url 'pastebin_paste_list' %}">paste bin</a></li>
             </ul>
         </div>
         <div class="authentication">
@@ -29,7 +30,7 @@
             {% else %}
                 <ul>
                     <li><a href="{% url 'login' %}">login</a></li>
-                    <li><a href="{% url 'signup' %}">about</a></li>
+                    <li><a href="{% url 'signup' %}">sign up</a></li>
                 </ul>
             {% endif %}
         </div>

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.slug }}</title>
-</head>
-<body>
-    <p>
-        <div>
-            <p>{{ post.title }}</p>
-        </div>
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% block title %}{{ post.title }} {% endblock %}
         <div>
             <span>
                 written by {{ post.author }} on {{ post.created_on }}
@@ -30,6 +22,9 @@
     </div>
     {% endif %}
     <div>
+        <a href = "{% url 'index' %}">view posts</a> | <a href = "{% url 'delete_post' post.slug %}">delete post</a>
+    </div>
+    <div>
         <h2>Add comments</h2>
         <form action = "" method="POST">
             {% csrf_token %}
@@ -39,5 +34,4 @@
             <input type = "submit" name = "submit", value = "submit">
         </form>
     </div>
-</body>
-</html>
+{% endblock %}
