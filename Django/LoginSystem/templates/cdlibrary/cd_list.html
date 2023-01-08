@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}CDS{% endblock %}
+{% block content %}
     Hi and welcome to the list of displays we have
     <a href="{% url 'new_cd' %}">create new CD?</a> | <a href="{% url 'logout' %}">logout</a> | <a href="{% url 'login' %}">login</a> 
     {% for cd in cds %}
@@ -19,5 +13,4 @@
     </ul>
     
     {% endfor %}
-</body>
-</html>
+{% endblock  %}
