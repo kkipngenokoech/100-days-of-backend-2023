@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block title %}New Paste{% endblock %}
+{% block content %}
 <label for="">Paste details:</label>
 <p>  
     <div>
@@ -32,3 +36,5 @@
 <p>
     <a href="{% url 'pastebin_paste_list' %}">View All</a>
 </p>
+
+{% endblock %}

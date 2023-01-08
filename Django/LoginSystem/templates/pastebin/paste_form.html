@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}new paste{% endblock %}
+{% block content %}
 <h1>Create a new paste</h1>
 <form action="" method="post">
    {% csrf_token %}
@@ -8,3 +11,4 @@
 </form>
 
 <a href="{% url 'pastebin_paste_list' %}">View all</a>
+{% endblock %}
