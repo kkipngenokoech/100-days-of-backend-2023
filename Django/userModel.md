@@ -16,3 +16,7 @@ User objects have the following fields:
 10. is_superuser
 11. last_login
 12. date_joined
+
+to import this model you import it from django.contrib.auth.models:
+
+`from django.contrib.auth.models import User`.

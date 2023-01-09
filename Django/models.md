@@ -86,4 +86,9 @@ it includes the null, blank, choices...
 1. null - when set to true, django can store null values in the field - this is database related
 2. blank - if true, the field is allowed to be blank - this validation-related
 3. choices - this is where the user can choose an option from a list of options. it normally has two fields(tuple), one which is stored in the database and one which the user uses during the selection.
-4. 
+
+## def __unicode__(self):
+
+this is a special method in python.it is used to represent our method looks like in a unicode string, it is used to return a unicode string instead of a regular ascii string.
+
+The __unicode__() method is called when the built-in unicode() function is used to convert an object to a Unicode string, or when the %u format specifier is used in a string formatting operation.
