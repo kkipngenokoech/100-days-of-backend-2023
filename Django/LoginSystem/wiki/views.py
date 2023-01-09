@@ -21,3 +21,8 @@ def ArticleCreateView(request):
 class ArticleDetailView(DetailView):
     model = models.Article
     context_object_name = 'article'
+
+class ArticleListView(ListView):
+    def get_queryset(self):
+        return models.Article.objects.all()#.filter(author=self.request.user)
+    context_object_name = "wikis"
