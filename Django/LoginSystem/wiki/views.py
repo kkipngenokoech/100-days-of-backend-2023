@@ -15,5 +15,9 @@ def ArticleCreateView(request):
         article.save()
         msg = "Article saved successfully"
         messages.success(request, msg, fail_silently=True)
-        return redirect('home')
+        return redirect('wiki_article_detail',slug=article.slug)
     return render(request, 'wiki/article_form.html',{'form': form})
+
+class ArticleDetailView(DetailView):
+    model = models.Article
+    context_object_name = 'article'

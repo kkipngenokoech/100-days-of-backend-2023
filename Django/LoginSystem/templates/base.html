@@ -36,7 +36,18 @@
         </div>
     </div>
     <main>
-      {% block content %}{% endblock %}
+        {% if messages %}
+            <div class = "messages">
+                {% for message in messages %}
+                    <ul>
+                        <li class="{{ message.tag }}">
+                            {{ message }}
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
     </main>
     <footer>
       Copyright {{ today|date:"Y" }}
