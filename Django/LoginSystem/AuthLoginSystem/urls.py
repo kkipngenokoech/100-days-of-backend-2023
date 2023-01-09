@@ -23,5 +23,6 @@ urlpatterns = [
     path("",include('home.urls')),
     path("cdlibrary/", include('cdlibrary.urls'), name="cdlibrary"),
     path("pastebin/", include('pastebin.urls')),
-    path("blog/",include('blog.urls'))
+    path("blog/",include('blog.urls')),
+    path("wiki/",include('wiki.urls'))
 ]

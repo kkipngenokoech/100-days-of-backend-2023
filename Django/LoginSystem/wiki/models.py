@@ -24,6 +24,9 @@ class Article(models.Model):
             self.slug = slugify(self.title)
         super(Article, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return ('wiki_article_detail', (), {'slug': self.slug})
+
 class Edit(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     editor = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -34,7 +37,7 @@ class Edit(models.Model):
         ordering = ['-edited_on']
 
     def __unicode__(self):
-        return "%s - %s - %s " % (self.summary, self.editor, self.edited on)
+        return "%s - %s - %s " %(self.summary, self.editor, self.edited_on)
 
     def get_absolute_url(self):
         return ('wiki_edit_detail', self.id)
