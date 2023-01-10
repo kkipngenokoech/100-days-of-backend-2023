@@ -25,6 +25,10 @@ this is enabled automatically when we startproject.
 
 a module for handling user authentication adn authorization
 
+### django.contrib.auth.decorators
+
+login_required - if the user is not logged in, it has to redirect someone to settings.LOGIN_URL
+
 ## contenttypes
 
 a module for handling content types i.e texts, images
