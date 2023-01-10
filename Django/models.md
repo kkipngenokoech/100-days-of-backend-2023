@@ -92,3 +92,19 @@ it includes the null, blank, choices...
 this is a special method in python.it is used to represent our method looks like in a unicode string, it is used to return a unicode string instead of a regular ascii string.
 
 The __unicode__() method is called when the built-in unicode() function is used to convert an object to a Unicode string, or when the %u format specifier is used in a string formatting operation.
+
+## get_object_or_404()
+
+this is a django method used to retrieve a single object from the database, or raise a 404 error if the object doesn't exist.
+
+this is normally used in the views, when the primary key used to identify te object has been or will be passed in the url.
+
+so the parameters you pass is the model name and the unique identifier to help you isolate the models.
+
+its code lives in django.shortcuts.
+
+## get_list_or_404()
+
+this is used to get list of objects in the database.
+
+here you pass a parameter like published=True, it returns a list of published objects in the model.

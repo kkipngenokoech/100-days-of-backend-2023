@@ -18,6 +18,11 @@ def ArticleCreateView(request):
         return redirect('wiki_article_detail',slug=article.slug)
     return render(request, 'wiki/article_form.html',{'form': form})
 
+@login_required
+def ArticleEditView(request, slug):
+    article = get_object_or_404(models.Article, slug=slug)
+
+
 class ArticleDetailView(DetailView):
     model = models.Article
     context_object_name = 'article'
