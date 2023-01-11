@@ -21,6 +21,12 @@ def ArticleCreateView(request):
 @login_required
 def ArticleEditView(request, slug):
     article = get_object_or_404(models.Article, slug=slug)
+    form = ArticleForm(request.POST or None, instance=article)
+    Edit_form = EditForm(request.POST or None)
+    if form.is_valid():
+        article = form.save()
+        if Edit_form.is_valid():
+            edit = Edit_form.save(commit=False)
 
 
 class ArticleDetailView(DetailView):
