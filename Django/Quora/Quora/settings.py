@@ -26,11 +26,13 @@ SECRET_KEY = 'django-insecure-$ak*69si4lc*&hmm3wbbx0br#1*j2$$s!g1i((38m4iwfn9ri%
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'core.User'
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'core',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
