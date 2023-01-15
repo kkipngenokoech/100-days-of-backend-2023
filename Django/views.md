@@ -75,4 +75,53 @@ types of generic views include:
 4. UpdateView - Display a form for updating an existing object and handle form submission
 5. DeleteView - Display a form for deleting page and handle the object deletion.
 
-to use generic views 
+to use generic views
+
+## class meta
+
+this is a field used to change the behavior of our model fields.
+
+this is basically a inner class of our model class. it is used in changing things like:
+
+1. verbose_name
+2. order options
+
+this is a completely option class to add into your models
+
+```python
+class Student(models.Model):
+    class meta:
+        option...
+```
+
+### model meta options
+
+#### abstract
+
+if abstract = True, it means this model will be an abstract base class. this means that this class is not going to be used to create methods but it will be inherited by other classes
+
+the fields for this class will be added to the child classes.
+
+this model then won't be used to create a database table.
+
+this is normally used when we have like a common set of characteristics exists over different models.
+
+```python
+#models.py
+from django.db import models
+class Vehicle(models.Model):
+    brand = models.charField(max_length=100)
+    class meta:
+        abstract = True
+class Car(Vehicle):
+    doors = models.PositiveIntegerField()
+class Jet(Vehicle):
+    wingType = models.CharField(max_length=30)
+class MotorBike(Vehicle):
+    pass
+```
+
+if we want to overide some inherited class attribute we can always redefine it in our child classes.
+
+#### app_label
+
