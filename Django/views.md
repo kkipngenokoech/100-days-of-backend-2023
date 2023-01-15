@@ -121,7 +121,65 @@ class MotorBike(Vehicle):
     pass
 ```
 
-if we want to overide some inherited class attribute we can always redefine it in our child classes.
+if we want to override some inherited class attribute we can always redefine it in our child classes.
 
 #### app_label
+
+if a model is defined outside the applications in INSTALLED_APPS then you must declare which app it belongs and this is where you do so:
+
+```python
+class meta:
+    app_label = "core"
+```
+
+that means the model class defined above belongs to the core app in the list of our installed apps.
+
+#### verbose_name
+
+this gives your models a human readable name, this is what will be displayed on your templates.
+
+if you define your model class meta with a verbose name that's how your model will be named when being declared and used in other areas of your code.
+
+#### ordering
+
+this is used to change the order of your model fields.
+
+```python
+class Meta:
+    ordering = [-1]
+```
+
+this will reverse the order of your model fields.
+
+#### proxy
+
+if we add proxy = True  to our model which subclasses another model then it will be treated as a proxy model.
+
+A proxy model acts as an interface between the user and the actual model.
+
+it is used to modify or extend the behavior of the existing models without changing the original  models code.
+
+it can have it's own methods, fields and managers.
+
+it can also override the fields methods and managers of the original model
+
+```python
+...
+class Meta:
+    proxy = True
+
+...
+```
+
+#### permissions
+
+if there's any extra permissions you want to include in your models you can add them here, add, delete view permissions are normally added automatically.
+
+#### db_table
+
+this is used to override the db_table name in your models.
+
+#### get_latest_by
+
+It returns the latest object in the table based on the given field, used for typically DateField, DateTimeField, or IntegerField.
 
