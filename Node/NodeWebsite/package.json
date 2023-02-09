@@ -1,0 +1,11 @@
+{
+  "name": "nodewebsite",
+  "version": "1.0.0",
+  "description": "my basic first node website",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodewebsite"
+  },
+  "author": "",
+  "license": "ISC"
+}
