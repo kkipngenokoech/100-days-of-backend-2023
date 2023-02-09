@@ -29,3 +29,13 @@ this is the first line in the browser. it tells the OS which interpreter it shou
 `#!/usr/bin/env node` - this is the relative path to the interpreter since not all operating systems have node in the bin folder.
 
 to use shebang, you should give your file executable permissions: `chmod u+x nameOfYourFile.js`.
+
+## EXECUTING STRINGS FROM THE TERMINAL
+
+sometimes you want to run the strings from the terminal without writing them into the files. to do that you use `-e`, `--eval "script"` flags i.e
+
+`node -e "console.log('hello multiverser')"`
+
+you can replace the `-e` with `--eval "script`.
+
+to have a realtime change in your console output as you work on your file you use `nodemon nameOfYourFile.js`.
