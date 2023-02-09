@@ -16,6 +16,12 @@ render takes a couple of arguments - request, template_name as the required argu
 
 this shortcut is used to redirect the user to a different URL. it takes a single argument, the url to redirect the user to and returns an HttpResponseRedirect object.
 
+to import this shortcut into your module you:
+
+```python
+from django.shortcuts import redirect
+```
+
 ## get_object_or_404()
 
 this is used to retrieve a single object from the database and raise Http404 if the object doesn't exist.
