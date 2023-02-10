@@ -24,3 +24,11 @@ we are also including the `ejs` template engine to render our pages.
 
 for that we are going to:
 `npm install ejs express`.
+
+## CREATING A ENTRY POINT TO OUR WEBSITE
+
+[`index.js`](./index.js)
+
+## CREATING VIEWS IN OUR WEBSITE
+
+to render views you need to use `.ejs`, ie to render an index, you should have a `index.ejs` in your views.
