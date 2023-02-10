@@ -28,5 +28,6 @@ router.get('/new', function(req, res){
 router.post('/new', function(req, res){
   messages.push({text: req.body.message, user: req.body.author, added: new Date()})
   console.log(messages)
+  res.redirect('/')
 })
 module.exports = router;
