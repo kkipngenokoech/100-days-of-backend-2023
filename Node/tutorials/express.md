@@ -58,12 +58,28 @@ The next function simply tells express to move to the next middleware in the sta
 
 this is how you load your middleware function into express so that it knows how to use it.
 
-## HOW TO USE EXPRESS JS
+## HOW TO USE EXPRESS JS Generator
 
 you have to have express js installed `npm install -g express-generator`
 
+this express generator has a number of options/flags to pass you can see this using the flags `--help` or `-h`.
+
 1. create a new directory for your project and navigate to: `mkdir Multiverse` and cd into it `cd Multiverse`.
-2. then run express generator expressing the templating engine you want to use :- i.e ejs, pug, hbs. `express --view=ejs Multiverse`.
-3. cd into that Multiverse created and then `npm install`
+2. then run express generator expressing the templating engine you want to use :- i.e ejs, pug, hbs. `express --view=ejs Multiverse`. This would cause the express generator to create a subfolder called Multiverse, if you don't want that effect you can always leave out the Multiverse part.
+3. cd into that Multiverse created and then `npm install` - this is used to install dependencies.
 4. and then `npm start`.
 5. navigate into `http://127.0.0.1:3000/`.
+
+### configuring template engines
+
+has you have noticed when we were running the command express, we passed a flag `--view`, this allowed us to specify the templating engine we are going to use.
+
+as noted earlier, there are a lot of templating engines out here:
+
+1. ejs - express js
+2. Hbs
+3. Pug(Jade)
+4. Twig
+5. Vash
+
+if you don't specify the options, it chooses jade by default.
