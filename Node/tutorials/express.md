@@ -57,3 +57,13 @@ The next function simply tells express to move to the next middleware in the sta
 ## app.use()
 
 this is how you load your middleware function into express so that it knows how to use it.
+
+## HOW TO USE EXPRESS JS
+
+you have to have express js installed `npm install -g express-generator`
+
+1. create a new directory for your project and navigate to: `mkdir Multiverse` and cd into it `cd Multiverse`.
+2. then run express generator expressing the templating engine you want to use :- i.e ejs, pug, hbs. `express --view=ejs Multiverse`.
+3. cd into that Multiverse created and then `npm install`
+4. and then `npm start`.
+5. navigate into `http://127.0.0.1:3000/`.
