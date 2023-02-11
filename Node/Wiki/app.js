@@ -1,4 +1,6 @@
 var createError = require('http-errors');
+require('./database')
+// require('./testdb')
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
