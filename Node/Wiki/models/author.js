@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const AuthorSchema = new Schema ({
-    firstName: {type: String, required: true, maxLength: 100},
-    familyName: {type: String, required: true, maxLength: 100},
+    firstName: {type: String, maxLength: 100},
+    familyName: {type: String, maxLength: 100},
     dateOfBirth: {type: Date},
     date_of_death: {type: Date}
 })
