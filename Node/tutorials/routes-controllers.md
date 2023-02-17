@@ -164,3 +164,4 @@ router.get('/profile/:id', function(req, res){
 ```
 
 When a request is made to this route, the value of the id parameter will be extracted from the URL and stored in the params property of the req object. We can then access this value using req.params.id.
+
