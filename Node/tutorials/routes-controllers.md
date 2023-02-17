@@ -93,17 +93,60 @@ router.get('/about', function(req, res){
 
 there are many functions in the router used to respond to the user's request:
 
+## res object
+
+this is an object in the server side that represents the server's response to a client request. it is used to set response status codes, http headers and content that would be send back to the user.
+
+it has several properties:
+
+1. res.status(code) - sets the HTTP status code of the reponse.
+2. res.set(field, [value]) - sets a response header with a specific field and value i.e `res.set('content-type', 'text/html')`.
+3. res.send([body])
+4. res.json([body])
+5. res.render(view,[locals],[callbacks])
+6. res.sendFile()
+
 ### res.send()
 
 this returns a string, object or arrays this is one of the methods provided by the res object.
 
+```javascript
+router.get('/about', function(req, res){
+    res.send('hello multiverse, this is an about me page')
+})
+```
+
 ### res.json()
 
-returns json content
+returns json content, when the client receives this response. it will automatically parse this json data into a corresponding JavaScript object or array.
+
+```javascript
+router.get('/profile', function(req, res){
+    const profile = [
+        {id: 1, name: 'multiverse001'},
+        {id: 2, name: 'multiverse002'}
+    ]
+    res.json(profile)
+})
+```
 
 ### res.sendFile()
 
-returns a file
+returns a file, it takes  a filepath as an argument and sends the file back to the client with appropriate headers set.
+
+```javascript
+router.get('/file', function(req, res){
+    res.sendFile('path/to/file')
+})
+```
 
 ### res.render()
 
+this is used to render a view and send it back to the client.  render takes the name of the view to be rendered has the first attribute and the context object as its second argument.
+
+```javascript
+...
+router.get('/about', function(req,res){
+    res.render('about',)
+})
+```
