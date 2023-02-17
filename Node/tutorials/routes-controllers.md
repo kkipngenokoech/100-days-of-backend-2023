@@ -150,3 +150,17 @@ router.get('/about', function(req,res){
     res.render('about',)
 })
 ```
+
+## route parameters
+
+these are the ways to capture the dynamic parts of a URL.
+
+when a URL contains dynamic parts that can vary with each request, such as ID or a Username, we can use route parameters to extract those values and use them in our application:
+
+```javascript
+router.get('/profile/:id', function(req, res){
+    const userId = req.params.id
+})
+```
+
+When a request is made to this route, the value of the id parameter will be extracted from the URL and stored in the params property of the req object. We can then access this value using req.params.id.

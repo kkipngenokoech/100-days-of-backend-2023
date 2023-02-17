@@ -10,13 +10,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-const mongoose = require('mongoose')
-mongoose.set('strictQuery', false)
-const mongoDB = 'mongodb+srv://LocalLibraryAdmin:LocalLibraryAdmin_001@cluster0.ibvmpia.mongodb.net/localibrary?retryWrites=true&w=majority'
-main().catch(err => console.log(err))
-async function main(){
-  await mongoose.connect(mongoDB)
-}
+// const mongoose = require('mongoose')
+// mongoose.set('strictQuery', false)
+// const mongoDB = 'mongodb+srv://LocalLibraryAdmin:LocalLibraryAdmin_001@cluster0.ibvmpia.mongodb.net/localibrary?retryWrites=true&w=majority'
+// main().catch(err => console.log(err))
+// async function main(){
+//   await mongoose.connect(mongoDB)
+// }
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
