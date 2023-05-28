@@ -56,3 +56,73 @@ this is a flutter built in dark theme that can be used by calling ThemeData.dark
 
 ## Global App Theme
 
+to set a global theme for your application, you create a themeData, inside the main.dart file
+
+```dart
+class MyApp extends StatelessWidget {
+    @override
+
+    Widget build(BuildContext context) {
+        return MaterialApp (
+            theme: ThemeData(
+                // here is where you define your global theme properties
+                // i.e primary color, font color, font family, font size
+            )
+            home: MyHomeWidget();
+        )
+    }
+}
+```
+
+there's that debug flag that comes by default when we start a flutter application, to do that you, in your materialApp, define:
+
+```dart
+widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+
+        )
+    )
+}
+```
+
+## child theme
+
+if you want to customize the appearance of child widgets or specific UI elements you can:
+
+wrap the widgets in theme widget, this widget will completely override the app default theme.
+
+to completely override the default theme:
+
+```dart
+widget build(BuildContext context) {
+    body: center(
+        child: theme (
+            data: ThemeData(
+                // custom theme properties
+            ),
+            child: card (
+
+            child: Text('unique title - multiverse'),
+            ),
+        ),
+    ),
+}
+```
+
+to extend the default theme and customize only some few parts:
+
+```dart
+widget build(BuildContext context){
+    body: center(
+        child: theme (
+            data: Theme.of(context).copyWith(cardColor: Colors),
+        ),
+    ),
+}
+```
+
+you can always override the default theme properties in the .copyWith() method
+
+
