@@ -44,3 +44,35 @@ _ myValue += 50.0;}). Any variable values modified outside the setState() method
 not refresh the UI. Therefore, it is best to place calculations that do not need state changes
 outside the setState() method.
 
+```dart
+class MaximumBid extends StatefulWidget {
+    @override
+
+    _maximumBidState creatState() => _maximumBidState();
+
+    class _MaximumBidState extends State <MaximumBid> {
+        double _maximumBid = 0.0;
+
+        void _increaseMyMaxBid(){
+            setState((){
+                _maximumBid += 50.0;
+            })
+        }
+    }
+
+    @override
+    Widget build(BuildContext context){
+        return Column (
+            children: <Widget>[
+                Text('my maximum bid is: $_maximumBid');
+                FlatButton.icon(
+                    onPressed: () => _increaseMyMaxBid(),
+                    icon: Icon(Icons.add_circle),
+                    label: Text('increase bid'),
+                )
+            ]
+        )
+    }
+}
+
+```
