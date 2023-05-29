@@ -13,8 +13,22 @@ class _HomeState extends State<HomePage> {
       appBar: AppBar (
         title: Text('Multiverse Home Page'),
       ),
-      body: const Center(
-        child: Text('Multiverse '),
+      body:const SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Text("I am column inside a row "),
+                    Text("I am another column inside a row"),
+                  ],
+                )
+              ],
+            )
+          ),
+          ),
       ),
       );
   }
