@@ -13,23 +13,57 @@ class _HomeState extends State<HomePage> {
       appBar: AppBar (
         title: Text('Multiverse Home Page'),
       ),
-      body:const SafeArea(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text("I am column inside a row "),
-                    Text("I am another column inside a row"),
-                  ],
-                )
+                _buildRefactorRow()
               ],
             )
           ),
           ),
       ),
       );
+  }
+
+  Row _buildRefactorRow() {
+    return Row(
+                children: <Widget>[
+                  Container(
+                    color: Colors.yellow,
+                    height: 40.0,
+                    width: 40.0,
+                  ),
+                  const Padding(padding: EdgeInsets.all(16.0),),
+                  const Text("I am another column inside a row"),
+                  const Padding(padding: EdgeInsets.all(16.0),),
+                  const _ExpandedWidget(),
+                  const Padding(padding: EdgeInsets.all(16.0),),
+                  Container(
+                    color: Colors.brown,
+                    height: 40.0,
+                    width: 40.0,
+                    ),
+                ],
+              );
+  }
+}
+
+class _ExpandedWidget extends StatelessWidget {
+  const _ExpandedWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: Colors.amber,
+        height: 40.0,
+        width: 40.0,
+      ),
+    );
   }
 }
