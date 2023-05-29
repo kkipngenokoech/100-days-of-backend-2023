@@ -8,6 +8,14 @@ class HomePage extends StatefulWidget {
 class _HomeState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+
+    return Scaffold (
+      appBar: AppBar (
+        title: Text('Multiverse Home Page'),
+      ),
+      body: Center(
+        child: Text('Multiverse '),
+      ),
+      );
   }
 }
