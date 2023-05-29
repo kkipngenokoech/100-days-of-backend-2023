@@ -2,7 +2,9 @@
 
 1. Scaffold - this is the basic material design visual layout that allows you add various widgets i.e AppBar, BottomAppBar, FloatingActionButton, Drawer, SnackBar, BottomSheet
 2. AppBar - widget usually contains the standard title, toolbar, leading and action properties
+   
    ![AppBar](images/AppBar.png)
+   
    1. title - it is implemented with a text widget
    2. leading - it is displayed before the title property usually an IconButton or BackButton
    3. actions - it is displayed to the right of the title property It’s a list of widgets aligned to the upper right of an AppBar widget usually with an IconButton or PopupMenuButton.
