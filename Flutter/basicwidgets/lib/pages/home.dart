@@ -11,17 +11,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: () {},
         ),
-        title: Text("Hello Multiverse"),
+        title: const Text("Hello Multiverse"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.account_box_rounded),
+            icon: const Icon(Icons.account_box_rounded),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.workspace_premium_outlined),
+            icon: const Icon(Icons.workspace_premium_outlined),
             onPressed: () {},
           )
         ],
