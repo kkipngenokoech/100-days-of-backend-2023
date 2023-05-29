@@ -13,7 +13,7 @@ class _HomeState extends State<HomePage> {
       appBar: AppBar (
         title: Text('Multiverse Home Page'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Multiverse '),
       ),
       );
