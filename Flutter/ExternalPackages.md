@@ -28,3 +28,23 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 ```
 
+To use an external package, library or an external class, use the import statement. 
+
+Separating code logic into different class files allows you to separate and group code into manageable objects. 
+
+The import statement allows access to external packages and classes. It requires only one argument,
+which specifies the uniform resource identifier (URI) of the class/library.
+
+If the library is created by a package manager, then you specify the package: scheme before the URI. If importing a class, you specify the location and class name or the package: directive
+
+```dart
+// Import the material package
+import 'package:flutter/material.dart';
+// Import external class
+import 'charts.dart';
+// Import external class in a different folder
+import 'services/charts_api.dart';
+// Import external class with package: directive
+import 'package:project_name/services/charts_api.dart';
+```
+
