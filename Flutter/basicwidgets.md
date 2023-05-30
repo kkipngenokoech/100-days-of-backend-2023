@@ -30,3 +30,34 @@ full available screen size
 
 Adding the SafeArea widget automatically adjusts padding for devices that have a notch. Any SafeArea
 child widgets are constrained to the correct padding.
+
+## Textwidget
+
+Text widgets can be customized using `style: TextStyle()`
+
+The Text constructor takes the arguments string, style, maxLines, overflow, text­
+Align, and others.
+
+```dart
+Text(
+   'Flutter World for Mobile',
+   style: TextStyle(
+      fontSize: 24.0,
+      color: Colors.deepPurple,
+      decoration: TextDecoration.underline,
+      decorationColor: Colors.deepPurpleAccent,
+      decorationStyle: TextDecorationStyle.dotted,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.bold,
+   ),
+   maxLines: 4,
+   overflow: TextOverflow.ellipsis,
+   textAlign: TextAlign.justify,
+),
+```
+
+## RichText Widgets
+
+The RichText widget is a great way to display text using multiple styles. The RichText widget takes
+TextSpan as children to style different parts of the strings
+
