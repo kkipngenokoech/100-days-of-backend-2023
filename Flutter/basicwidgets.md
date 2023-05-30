@@ -19,3 +19,14 @@ an array of List<Widget>. The same properties that the Column contains are appli
 Row widget with the exception that the alignment is horizontal, not vertical.
 1. Buttons - There are a variety of buttons to choose from for different situations such as RaisedButton, FloatingActionButton, FlatButton, IconButton, PopupMenuButton, and ButtonBar.
 
+## containers widget
+
+The Container widget has an optional child widget property and can be used as a decorated widget
+with a custom border, color, constraint, alignment, transform (such as rotating the widget), and more.
+This widget can be utilized as an empty placeholder (invisible), and if a child is omitted, it sizes to the
+full available screen size
+
+## safeAreaWidget
+
+Adding the SafeArea widget automatically adjusts padding for devices that have a notch. Any SafeArea
+child widgets are constrained to the correct padding.
