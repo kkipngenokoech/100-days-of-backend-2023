@@ -54,6 +54,38 @@ class _HomePageState extends State<HomePage> {
           )
         )
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: Colors.lightGreen.shade100,
+        child: const Icon(Icons.play_arrow),
+      ),
+      bottomNavigationBar:  const BottomAppBarWidget(),
+    );
+  }
+}
+
+class BottomAppBarWidget extends StatelessWidget {
+  const BottomAppBarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar(
+      // shape: const CircularNotchedRectangle(),
+      color: Colors.lightGreen.shade100,
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Icon(Icons.pause),
+          Icon(Icons.stop),
+          Icon(Icons.access_time),
+          Padding(
+            padding: EdgeInsets.all(32.0),
+          ),
+        ],
+      ),
     );
   }
 }

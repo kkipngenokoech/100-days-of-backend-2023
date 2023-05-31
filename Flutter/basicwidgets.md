@@ -89,3 +89,14 @@ Column(
 ## Row widgets
 
 A row widget displays its children horizontally, it takes a children property containing an array of `List<Widget>`
+
+## Buttons
+
+there are variety of button widgets to choose from
+
+1. Floating action buttons - `FloatingActionButton`
+2. Flat button - `FlatButton`
+3. Icon button - `IconButton`
+4. raised button - `RaisedButton`
+5. Popup menu button - `PopupMenuButton`
+6. Button Bar - `ButtonBar`
