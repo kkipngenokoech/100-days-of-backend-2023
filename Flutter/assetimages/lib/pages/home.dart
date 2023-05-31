@@ -19,7 +19,9 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               Text("Multiverse"),
               RowImageWidget(),
+              Divider(),
               BoxShadowWidget(),
+              Divider(),
               TextFieldWidget(),
               Divider(),
               TextFormWidget()
@@ -41,7 +43,8 @@ class TextFormWidget extends StatelessWidget {
     return TextFormField(
       decoration: const InputDecoration(
         labelText: 'Enter your multiverse code',
-        border: UnderlineInputBorder()
+        border: UnderlineInputBorder(),
+        labelStyle: TextStyle(color: Colors.purple),
       ),
     );
   }
