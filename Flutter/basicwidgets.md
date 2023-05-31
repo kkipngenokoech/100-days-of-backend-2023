@@ -100,3 +100,67 @@ there are variety of button widgets to choose from
 4. raised button - `RaisedButton`
 5. Popup menu button - `PopupMenuButton`
 6. Button Bar - `ButtonBar`
+
+### floating action buttons
+
+The FloatingActionButton widget is usually placed on the bottom right or center of the main
+screen in the Scaffold floatingActionButton property. 
+
+Use the FloatingActionButtonLocation widget to either dock (notch) or float above the navigation bar. 
+
+To dock a button to the navigation bar, use the BottomAppBar widget. 
+
+By default, it’s a circular button but can be customized to a stadium shape by using the named constructor FloatingActionButton.extended. In the example
+code
+
+### FlatButton widgets
+
+The FlatButton widget is the most minimalist button used; it displays a text label without any
+borders or elevation (shadow). Since the text label is a widget, you could use an Icon widget instead
+or another widget to customize the button. color, highlightColor, splashColor, textColor, and
+other properties can be customized.
+
+### RaisedButton widgets
+
+The RaisedButton widget adds a dimension, and the elevation (shadow) increases when the user
+presses the button.
+
+### IconButton widgets
+
+The IconButton widget uses an Icon widget on a Material Component widget that reacts to touches
+by filling with color (ink). The combination creates a nice tap effect, giving the user feedback that an
+action has started.
+
+### PopupMenuButton widgets
+
+The PopupMenuButton widget displays a list of menu items. When a menu item is pressed, the value passes to the onSelected property. 
+
+A common use of this widget is placing it on the top right of the AppBar widget for the user to select different menu options. 
+
+Another example is to place the Popup­ MenuButton widget in the middle of the AppBar widget showing a list of search filters.
+
+### ButtonBar widgets
+
+this allows you to buttons horizontally
+
+the icons are passed as children attributes:
+
+```dart
+...
+children: <Widget>[
+
+]
+...
+// basically:
+Container(
+   color: Colors.green.shade100,
+   child: ButtonBar(
+      alignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+         icon: Icon(Icons.map, onPressed: () {})
+         icon: Icon(Icons.brush, onPressed: () {})
+         icon: Icon(Icons.airport_shuttle, onPressed: () {})
+      ]
+   )
+)
+```

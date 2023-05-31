@@ -10,10 +10,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
+        leading: const PopupMenuButtonWidget(),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.menu),
+        //   onPressed: () {},
+        // ),
         title: const Text("Hello Multiverse"),
         actions: <Widget>[
           IconButton(
@@ -25,44 +26,36 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {},
           )
         ],
-        flexibleSpace:const SafeArea(
-          child: Icon(
-            Icons.photo_camera,
-            size: 75.0,
-            color: Colors.black,
-          )
-        ),
+        flexibleSpace: const SafeArea(
+            child: Icon(
+          Icons.photo_camera,
+          size: 75.0,
+          color: Colors.black,
+        )),
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(75.0),
-          child: Container(
-            color: Colors.lightGreen.shade100,
-            height: 75.0,
-            width: double.infinity,
-            child:const Center(
-              child: Text(
-                "Bottom"
-              )
-            ),
-          )
-        ),
+            preferredSize: const Size.fromHeight(75.0),
+            child: Container(
+              color: Colors.lightGreen.shade100,
+              height: 75.0,
+              width: double.infinity,
+              child: const PopupMenuButtonWidget(),
+            )),
       ),
-      body:const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: SafeArea(
-          child: SingleChildScrollView(
+      body: const Padding(
+          padding: EdgeInsets.all(16.0),
+          child: SafeArea(
+              child: SingleChildScrollView(
             child: ColumnWidget(),
-          )
-        )
-      ),
+          ))),
       // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){},
+        onPressed: () {},
         backgroundColor: Colors.lightGreen.shade100,
-        icon: Icon(Icons.play_arrow),
-        label: Text("Play"),
+        icon: const Icon(Icons.play_arrow),
+        label: const Text("Play"),
         // child: const Icon(Icons.play_arrow),
       ),
-      bottomNavigationBar:  const BottomAppBarWidget(),
+      bottomNavigationBar: const BottomAppBarWidget(),
     );
   }
 }
@@ -104,12 +97,40 @@ class ColumnWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-         ContainerWithBoxDecoratorWidget(),
-         Divider(),
-         Text("column number 2 - multiverse"),
-         Divider(),
-         Text("column number 3 - multiverse"),
-         RowWidget()
+        ContainerWithBoxDecoratorWidget(),
+        Divider(),
+        Text("column number 2 - multiverse"),
+        Divider(),
+        Text("column number 3 - multiverse"),
+        RowWidget(),
+        ButtonBarContainer(),
+      ],
+    );
+  }
+}
+
+class ButtonBarContainer extends StatelessWidget {
+  const ButtonBarContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ButtonBar(
+      alignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        IconButton(
+          icon: const Icon(Icons.map),
+          onPressed: () {},
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.airport_shuttle)
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.brush),
+        ),
       ],
     );
   }
@@ -123,23 +144,26 @@ class RowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-     crossAxisAlignment: CrossAxisAlignment.start,
-     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-     mainAxisSize: MainAxisSize.max,
-     children: <Widget>[
-       Text("Multiverse row number 1"),
-       Padding(padding: EdgeInsets.all(16.0),),
-       Text("Multiverse row number 2"),
-       Padding(padding: EdgeInsets.all(16.0),),
-     ],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        Text("Multiverse row number 1"),
+        Padding(
+          padding: EdgeInsets.all(16.0),
+        ),
+        Text("Multiverse row number 2"),
+        Padding(
+          padding: EdgeInsets.all(16.0),
+        ),
+      ],
     );
   }
 }
 
-
 class ContainerWithBoxDecoratorWidget extends StatelessWidget {
-  const ContainerWithBoxDecoratorWidget ({
-   super.key,
+  const ContainerWithBoxDecoratorWidget({
+    super.key,
   });
   @override
   Widget build(BuildContext context) {
@@ -153,19 +177,17 @@ class ContainerWithBoxDecoratorWidget extends StatelessWidget {
               bottomRight: Radius.circular(100.0),
             ),
             gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.white,
-                Colors.lightGreen.shade500,
-              ]
-            ),
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.white,
+                  Colors.lightGreen.shade500,
+                ]),
             boxShadow: const [
               BoxShadow(
-                color: Colors.white,
-                blurRadius: 10.0,
-                offset: Offset(0.0, 10.0)
-              ),
+                  color: Colors.white,
+                  blurRadius: 10.0,
+                  offset: Offset(0.0, 10.0)),
             ],
           ),
           child: const Center(
@@ -177,3 +199,57 @@ class ContainerWithBoxDecoratorWidget extends StatelessWidget {
   }
 }
 
+class TodoMenuItem {
+  final String title;
+  final Icon icon;
+
+  TodoMenuItem({required this.title, required this.icon});
+}
+
+List<TodoMenuItem> foodMenuList = [
+  TodoMenuItem(title: "Fast Food", icon: const Icon(Icons.fastfood)),
+  TodoMenuItem(title: "Remind Me", icon: const Icon(Icons.add_alarm)),
+  TodoMenuItem(title: "Flight", icon: const Icon(Icons.flight)),
+  TodoMenuItem(title: "Music", icon: const Icon(Icons.audiotrack)),
+];
+
+class PopupMenuButtonWidget extends StatelessWidget
+    implements PreferredSizeWidget {
+  const PopupMenuButtonWidget({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // color: Colors.white,
+      height: preferredSize.height,
+      width: double.infinity,
+      child: Center(
+        child: PopupMenuButton<TodoMenuItem>(
+          icon: const Icon(Icons.view_list),
+          onSelected: ((valueSelected) {
+            print('valueSelected: ${valueSelected.title}');
+          }),
+          itemBuilder: (BuildContext context) {
+            return foodMenuList.map((TodoMenuItem todoMenuItem) {
+              return PopupMenuItem<TodoMenuItem>(
+                value: todoMenuItem,
+                child: Row(
+                  children: <Widget>[
+                    Icon(todoMenuItem.icon.icon),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                    ),
+                    Text(todoMenuItem.title),
+                  ],
+                ),
+              );
+            }).toList();
+          },
+        ),
+      ),
+    );
+  }
+
+  @override
+  // implement preferredSize
+  Size get preferredSize => const Size.fromHeight(75.0);
+}
