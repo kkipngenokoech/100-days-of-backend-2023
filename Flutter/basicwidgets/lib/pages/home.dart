@@ -54,11 +54,13 @@ class _HomePageState extends State<HomePage> {
           )
         )
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      floatingActionButton: FloatingActionButton(
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: (){},
         backgroundColor: Colors.lightGreen.shade100,
-        child: const Icon(Icons.play_arrow),
+        icon: Icon(Icons.play_arrow),
+        label: Text("Play"),
+        // child: const Icon(Icons.play_arrow),
       ),
       bottomNavigationBar:  const BottomAppBarWidget(),
     );
