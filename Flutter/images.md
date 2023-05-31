@@ -6,7 +6,7 @@ the asset bundle class provides access to custom resources such as images, fonts
 
 Before a Flutter app can use a resource, you must declare it in the pubspec.yaml file.
 
-you can declare all the assets in each directory. Make sure you end the directory name with a forward slash, ` /`
+you can declare all the assets in each directory. Make sure you end the directory name with a forward slash, ` /` - place this in the [pubspec]
 
 ```dart
 // pubspec.yaml file to edit
@@ -63,3 +63,9 @@ Icon (
     size: 48.0
 )
 ```
+
+By declaring your assets in the pubspec.yaml file, they are accessible by the AssetImage class from an AssetBundle. The Image widget through the image property loads a local image with the AssetBundle class. 
+
+To load an image over a network (such as the Web), you use the Image network constructor by passing a URL string.
+
+The Icon widget uses the MaterialIcons font library, which draws a glyph from the font described in the IconData class.
