@@ -61,3 +61,42 @@ Text(
 The RichText widget is a great way to display text using multiple styles. The RichText widget takes
 TextSpan as children to style different parts of the strings
 
+## column widgets
+
+A column widget displays its children vertically
+
+it takes a children property containing an array of `List<Widget>`
+
+the children align vertically without taking up the full height of the screen
+
+Each widget can be embedded in `Expanded` Widget to fill available space.
+
+you can use `CrossAxisAlignment`, `MainAxisAlignment` and `MainAxisSize` properties to align and size how much space is occupied on the main axis.
+
+```dart
+Column(
+   crossAxisAlignment: CrossAxisAlignment.center,
+   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+   mainAxisSize: MainAxisSize.max,
+   children: <Widget>[
+      Text('column 1'),
+      Text('column 2'),
+      Text('column 3'),
+   ]
+)
+```
+
+## Row widgets
+
+A row widget displays its children horizontally, it takes a children property containing an array of `List<Widget>`
+
+## Buttons
+
+there are variety of button widgets to choose from
+
+1. Floating action buttons - `FloatingActionButton`
+2. Flat button - `FlatButton`
+3. Icon button - `IconButton`
+4. raised button - `RaisedButton`
+5. Popup menu button - `PopupMenuButton`
+6. Button Bar - `ButtonBar`
