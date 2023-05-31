@@ -164,3 +164,6 @@ Container(
    )
 )
 ```
+
+The FloatingActionButton, FlatButton, RaisedButton, IconButton, PopupMenuButton, and ButtonBar widgets are configurable by setting the properties icon, iconSize, tooltip, color, text, and more.
+
