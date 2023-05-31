@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 # STATELESS AND STATEFUL WIDGETS
 
 flutter widgets are the building blocks of user interfaces
