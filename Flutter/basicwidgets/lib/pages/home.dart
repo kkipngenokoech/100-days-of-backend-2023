@@ -50,14 +50,54 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(16.0),
         child: SafeArea(
           child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                 ContainerWithBoxDecoratorWidget(),
-              ],
-            ),
+            child: ColumnWidget(),
           )
         )
       ),
+    );
+  }
+}
+
+class ColumnWidget extends StatelessWidget {
+  const ColumnWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+         ContainerWithBoxDecoratorWidget(),
+         Divider(),
+         Text("column number 2 - multiverse"),
+         Divider(),
+         Text("column number 3 - multiverse"),
+         RowWidget()
+      ],
+    );
+  }
+}
+
+class RowWidget extends StatelessWidget {
+  const RowWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+     crossAxisAlignment: CrossAxisAlignment.start,
+     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+     mainAxisSize: MainAxisSize.max,
+     children: <Widget>[
+       Text("Multiverse row number 1"),
+       Padding(padding: EdgeInsets.all(16.0),),
+       Text("Multiverse row number 2"),
+       Padding(padding: EdgeInsets.all(16.0),),
+     ],
     );
   }
 }
