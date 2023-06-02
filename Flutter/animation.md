@@ -30,3 +30,36 @@ it has the following arguments:
 7. decoration
 8. transform
 
+## AnimatedCrossFade container widget
+
+this provides a great cross-fade animation between two children widgets.
+
+this widget takes the following arguments:
+
+1. duration
+2. firstChild
+3. secondChild
+4. crossFadeState
+5. sizeCurve
+
+The AnimatedCrossFade constructor takes a duration argument, and you use the Duration class to specify 500 milliseconds. 
+
+The sizeCurve argument gives the animation between the two children’s size a spring effect by using Curves.bounceOut. 
+
+The crossFadeState argument sets the child widget to be shown once the animation is completed. By using the _crossFadeStateShowFirst variable, the correct crossFadeState child is displayed. 
+
+The firstChild and secondChild arguments hold the two widgets to animate
+
+## AnimatedOpacity container widget
+
+If you need to hide or partially hide a widget, AnimatedOpacity is a great way to animate fading over time. 
+
+The AnimatedOpacity constructor the takes:
+
+1. duration
+2. opacity
+3. curve
+4. child
+
+arguments
+

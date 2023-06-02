@@ -1,4 +1,6 @@
 import 'package:animations/widgets/animated_container.dart';
+import 'package:animations/widgets/animated_cross_fade.dart';
+import 'package:animations/widgets/animated_opacity.dart';
 import 'package:flutter/material.dart';
 
 class IndexPage extends StatelessWidget {
@@ -12,7 +14,13 @@ class IndexPage extends StatelessWidget {
       ),
       body: const SafeArea(
         child: Column(
-          children: <Widget>[AnimatedContainerWidget()],
+          children: <Widget>[
+            AnimatedContainerWidget(),
+            Divider(),
+            AnimatedCrossFadeWidget(),
+            Divider(),
+            AnimatedOpacityWidget()
+          ],
         ),
       ),
     );
