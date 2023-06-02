@@ -63,3 +63,8 @@ The AnimatedOpacity constructor the takes:
 
 arguments
 
+## AnimatedController container widget
+
+this class gives you increased flexibility in animation
+
+the animation can be play forward or reverse
