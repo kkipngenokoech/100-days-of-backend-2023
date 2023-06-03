@@ -48,3 +48,10 @@ The following example shows how to use the Navigator.pop method to close the pag
 
 You call the Navigator.pop(context) method by passing the BuildContext argument, and the page closes by sliding from the top of the screen toward the bottom
 
+In Flutter, the screens and pages are known as routes, and these routes are just a widget. In Android, a route is similar to an Activity, whereas, in iOS, it is equivalent to a ViewController.
+
+In any mobile app, navigating to different pages defines the workflow of the application, and the way to handle the navigation is known as routing. 
+
+Flutter provides a basic routing class MaterialPageRoute and two methods Navigator.push() and Navigator.pop() that shows how to navigate between two routes.
+
+`N/B`: routes are just widgets, you pop one widget and push another one.
