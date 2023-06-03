@@ -26,37 +26,41 @@ class _IndexPageState extends State<IndexPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: const Center(
-              child: Text('Multiverse Navigator'),
-            ),
-            actions: <Widget>[
-              IconButton(
-                  onPressed: () {
-                    // _openPageAbout{
-                    //   context: context,
-                    //   fullScreenDialog: true,
-                    // },
-                  },
-                  icon: const Icon(Icons.info_outline)),
-            ]),
-        body:  SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: __widgetOptions.elementAt(_selectedIndex),
-          ),
+      appBar: AppBar(
+        title: const Center(
+          child: Text('Multiverse Navigator'),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.info_outline_rounded), label: 'About'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.contact_page_outlined), label: 'Contact')
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.amber[800],
-          onTap: _onItemTapped,
-        ));
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.info_outline)
+          ),
+        ]
+      ),
+      body:  SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: __widgetOptions.elementAt(_selectedIndex),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue.shade200,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info_outline_rounded), label: 'About'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.contact_page_outlined), label: 'Contact')
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
+        onTap: _onItemTapped,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: const Icon(Icons.add_a_photo_rounded),
+      ),
+    );
   }
 }
